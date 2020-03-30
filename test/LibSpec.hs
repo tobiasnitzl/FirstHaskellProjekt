@@ -17,6 +17,6 @@ spec = do
     describe "ggt" $ do
         it "calculates the gcd of 12 and 8" $
             ggt 12 8 `shouldBe` 4
-        it "Calculate ggt of two excedentily numbers"
-            property $ \(a::Integer) (b::Integer) -> gcd a b == ggt a b
+        it "calculates the same as Haskells gcd" $
+            property $ \a b -> ggt (abs a) (abs b) == gcd (abs a) (abs b)
          
